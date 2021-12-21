@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "engines": {
+        "node": "17.2.0",
+        "npm": "8.1.4"
+    },
     "scripts": {
         "start": "node public/app.js",
         "dev": "nodemon src/app.ts",
