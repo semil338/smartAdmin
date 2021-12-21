@@ -5,8 +5,12 @@ const router = express.Router();
 
 const serviceAccount = require("../src/service-account.json");
 admin.initializeApp({
-    credential: admin.credential.cert(process.env.service as string),
-    databaseURL:"https://smart-home-a2edf-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    credential: admin.credential.cert({
+        projectId: process.env.projectId,
+        clientEmail: process.env.clientEmail,
+        privateKey:  process.env.privateKey,
+      }),
+    databaseURL: process.env.databaseURL
 });
 
 router.get("/", (req: Request, res: Response) => {
